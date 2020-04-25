@@ -1,0 +1,81 @@
+
+---
+title: "Introduction to R Syntax"
+# output: html_notebook
+---
+
+### Population Growth
+```{r}
+
+calculate_annual_growth <- function(year_one,year_two,pop_y1, pop_y2,city) {
+  
+  annual_growth <- (((pop_y2 - pop_y1) / pop_y1) * 100) / (year_two - year_one)
+  message <- paste("From", year_one, "to", year_two, "the population of the country grew by approximately", annual_growth, "% each year.")
+  print(message)
+  return(annual_growth)
+  
+}
+
+print(calculate_annual_growth(year_one=2019, year_two=2020, 30000000, 31000000))
+```
+
+### Population Growth
+```{r}
+city_name <- "Istanbul, Turkey"
+
+# Year	Population
+# 1927	  691000
+# 1950	  983000
+# 2000	 8831800
+# 2017	15029231
+
+
+calculate_annual_growth <- function(year_one,year_two,pop_y1, pop_y2,city) {
+  
+  annual_growth <- (((pop_y2 - pop_y1) / pop_y1) * 100) / (year_two-year_one)
+  message <- paste("From", year_one, "to", year_two, "the population of", city, "grew by approximately", annual_growth, "% each year.")
+  print(message)
+  return(annual_growth)
+  
+}
+
+### Growth %age from 1927 to 2017
+
+pop_year_one <- 691000
+pop_year_two <- 15029231
+
+pop_change <- pop_year_two - pop_year_one
+#print(pop_change)
+
+percentage_gr <- (pop_year_two - pop_year_one) / pop_year_one * 100
+#print(percentage_gr)
+
+annual_gr <- percentage_gr / (2017 - 1927)
+print(annual_gr)
+
+### Growth %age from 2000 to 2017
+
+pop_year_one <-  8831800
+pop_year_two <- 15029231
+
+pop_change <- pop_year_two - pop_year_one
+#print(pop_change)
+
+percentage_gr <- (pop_year_two - pop_year_one) / pop_year_one * 100
+#print(percentage_gr)
+
+annual_gr <- percentage_gr / (2017 - 2000)
+#print(annual_gr)
+
+######################################################
+
+y = calculate_annual_growth(1927, 2017, 691000, 15029231, city_name)
+print(y)
+
+```
+
+
+
+
+
+
